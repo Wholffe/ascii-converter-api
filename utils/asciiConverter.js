@@ -16,11 +16,9 @@ async function imageToAscii(imageBuffer) {
     .resize(width)
     .grayscale()
     .raw()
-    .toBuffer();
-
-  const { data, info } = await sharp(image)
-    .raw()
     .toBuffer({ resolveWithObject: true });
+
+  const { data, info } = image;
 
   const height = Math.floor(info.height * 0.5);
 
