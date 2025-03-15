@@ -34,11 +34,10 @@ Uploads an image and returns its ASCII representation.
 - **Parameters:**
   - `file` (required): The image file to convert.
 
-#### **Example Request (Using **``**)**
+#### **Example Request (Using curl)**
 
 ```sh
-curl -X POST http://localhost:3000/upload \
-     -F "file=@path/to/your/image.png"
+curl -X POST -F "file=@yourfile.txt" http://localhost:3000/upload
 ```
 
 #### **Example Response (ASCII Art of the Image)**
@@ -48,7 +47,7 @@ HTTP/1.1 200 OK
 Content-Type: text/plain
 Content-Length: 1234
 
-<exaple-art>
+<example-art>
 ```
 
 ## Contribution
