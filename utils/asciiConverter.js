@@ -2,8 +2,6 @@ const sharp = require('sharp');
 const path = require('path');
 
 const asciiChars = "@%#*+=-:. ".split("").reverse();
-const MAX_WIDTH = 150;
-const MAX_HEIGHT = 150;
 
 function isValidImage(file) {
   const validExtensions = ['.jpeg', '.jpg', '.png'];
@@ -11,14 +9,14 @@ function isValidImage(file) {
   return validExtensions.includes(fileExtension);
 }
 
-async function imageToAscii(imageBuffer) {
+async function imageToAscii(imageBuffer, max_width = 150, max_height = 150) {
   try {
     const metadata = await sharp(imageBuffer).metadata();
     let { width, height } = metadata;
     
-    if (width > MAX_WIDTH || height > MAX_HEIGHT) {
-      const widthRatio = MAX_WIDTH / width;
-      const heightRatio = MAX_HEIGHT / height;
+    if (width > max_width || height > max_height) {
+      const widthRatio = max_width / width;
+      const heightRatio = max_height / height;
       
       const scaleRatio = Math.min(widthRatio, heightRatio);
       width = Math.floor(width * scaleRatio);

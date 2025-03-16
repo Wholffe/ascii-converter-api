@@ -31,13 +31,36 @@ Uploads an image and returns its ASCII representation.
 
 - **Method:** `POST`
 - **Content-Type:** `multipart/form-data`
-- **Parameters:**
+- **Body Fields**
   - `file` (required): The image file to convert.
+  - `max_width` (optional): The maximum width of the ASCII art (default: 150).
+  - `max_height` (optional): The maximum height of the ASCII art (default: 150).
 
 #### **Example Request (Using curl)**
 
 ```sh
 curl -X POST -F "file=@yourfile.txt" http://localhost:3000/upload
+```
+
+#### **Json Representation**
+
+```json
+{
+  "method": "POST",
+  "url": "http://localhost:3000/upload",
+  "headers": {
+    "Content-Type": "multipart/form-data"
+  },
+  "body": {
+    "file": {
+      "filename": "image.png",
+      "content_type": "image/png",
+      "data": "(binary data here)"
+    },
+    "max_width": 100,
+    "max_height": 100
+  }
+}
 ```
 
 #### **Example Response (ASCII Art of the Image)**
