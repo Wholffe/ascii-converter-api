@@ -1,13 +1,17 @@
 const express = require('express');
 const multer = require('multer');
+const path = require('path');
 const { isValidImage, imageToAscii } = require('./utils/asciiConverter');
-
 const app = express();
 const PORT = 3000;
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 const upload = multer({ storage: multer.memoryStorage() });
 
-app.get('/', (req, res) => res.send('Use POST /upload to convert an image to ASCII art.'));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.post('/upload', upload.single('file'), async (req, res) => {
   if (!req.file) {
