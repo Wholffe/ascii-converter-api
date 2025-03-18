@@ -2,13 +2,30 @@
 
 A simple Node.js API that converts an uploaded image into ASCII art.
 
-## Installation
+## Download and Installation
+- Docker (recommended) [Docker's official website](https://www.docker.com/).
 
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/Wholffe/ascii-converter-api.git
-   cd ascii-image-api
    ```
+
+## Installation via Docker (recommended)
+
+2. **Build the Docker image:**
+   ```sh
+   docker build -t ascii-converter-api .
+   ```
+
+3. **Run the container:**
+   ```sh
+   docker run -p 3000:3000 --name "ascii-converter-api" ascii-converter-api
+   ```
+
+### OR
+
+### Installation Without Docker
+- Node.js installed on your system [Node.js official website](https://nodejs.org/).
 
 2. **Install dependencies:**
    ```sh
@@ -20,7 +37,12 @@ A simple Node.js API that converts an uploaded image into ASCII art.
    npm start
    ```
 
-## API Endpoints
+### API Endpoints:
+To check if the API is running, open your browser or an API client and visit:
+`http://localhost:3000`
+
+You should see the response:
+Use POST /upload to convert an image to ASCII art.
 
 ### `POST /upload`
 
