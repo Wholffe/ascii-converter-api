@@ -13,10 +13,10 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
             document.getElementById('asciiOutput').value = asciiImage;
         } else {
             const errorText = await response.text();
-            alert(`Fehler: ${errorText}`);
+            alert(`Error: ${errorText}`);
         }
     } catch (error) {
         console.error('Error uploading image:', error);
-        alert('Ein Fehler ist beim Hochladen des Bildes aufgetreten.');
+        alert('Error uploading image');
     }
 });

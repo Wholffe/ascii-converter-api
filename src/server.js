@@ -28,7 +28,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
   try {
     const asciiImage = await imageToAscii(req.file.buffer, max_width, max_height, reverse_chars);
-    res.status(200).send(`<pre><br>${asciiImage}<br></pre>`);
+    res.status(200).send(asciiImage);
   } catch (err) {
     console.error('Error processing the image:', err);
     res.status(500).send('Error processing the image.');

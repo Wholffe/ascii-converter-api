@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bild zu ASCII Konverter</title>
+    <title>ascii-converter-api</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Bild zu ASCII Konverter</h1>
+        <h1>ascii-converter-api</h1>
         <form id="uploadForm" enctype="multipart/form-data">
-            <input type="file" name="file" required />
+            <input type="file" accept=".png, .jpeg, .jpg" name="file" required />
             <br />
-            <label for="max_width">Maximale Breite:</label>
+            <label for="max_width">max_width</label>
             <input type="number" name="max_width" min="10" max="300" value="150" />
-            <br />
-            <label for="max_height">Maximale Höhe:</label>
+            <label for="max_height">max_height</label>
             <input type="number" name="max_height" min="10" max="300" value="150" />
-            <br />
-            <label for="reverse_chars">Umkehren der ASCII-Zeichen:</label>
+            <label for="reverse_chars">reverse_chars</label>
             <input type="checkbox" name="reverse_chars" value="true" />
             <br />
-            <button type="submit">Bild hochladen</button>
+            <button type="submit">upload image</button>
         </form>
 
         <textarea id="asciiOutput" readonly></textarea>
+        <br />
+        <button id="copyButton" onclick="copyText()">Copy ASCII</button>
     </div>
 
     <script src="script.js"></script>
