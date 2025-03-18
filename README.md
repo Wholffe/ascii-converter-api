@@ -34,7 +34,7 @@ A simple Node.js API that converts an uploaded image into ASCII art.
 
 3. **Start the server:**
    ```sh
-   npm start
+   node src/server.js
    ```
 
 ### API Endpoints:

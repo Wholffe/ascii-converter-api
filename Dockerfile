@@ -6,8 +6,8 @@ COPY package*.json ./
 
 RUN npm ci --only=production
 
-COPY . .
+COPY src ./src
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["node", "src/server.js"]
