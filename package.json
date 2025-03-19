@@ -4,7 +4,7 @@
   "description": "A simple Node.js API that converts an uploaded image into ASCII art.",
   "main": "index.js",
   "scripts": {
-    "devstart": "nodemon server.js"
+    "devstart": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",

@@ -1,31 +1,23 @@
 # ASCII Image API
-
 A simple Node.js API that converts an uploaded image into ASCII art.
 
 ## Download and Installation
-- Docker (recommended) [Docker's official website](https://www.docker.com/).
+### Installation via Docker (recommended)
+- Docker installed on your system [Docker's official website](https://www.docker.com/).
+
+1. **Run the container:**
+   ```sh
+   docker run -d --restart unless-stopped --name ascii-converter-api -p 3000:3000 ghcr.io/wholffe/ascii-converter-api:latest
+   ```
+
+### OR
+### Installation Without Docker
+- Node.js installed on your system [Node.js official website](https://nodejs.org/).
 
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/Wholffe/ascii-converter-api.git
    ```
-
-## Installation via Docker (recommended)
-
-2. **Build the Docker image:**
-   ```sh
-   docker build -t ascii-converter-api .
-   ```
-
-3. **Run the container:**
-   ```sh
-   docker run -p 3000:3000 --name "ascii-converter-api" ascii-converter-api
-   ```
-
-### OR
-
-### Installation Without Docker
-- Node.js installed on your system [Node.js official website](https://nodejs.org/).
 
 2. **Install dependencies:**
    ```sh
@@ -37,12 +29,9 @@ A simple Node.js API that converts an uploaded image into ASCII art.
    node src/server.js
    ```
 
-### API Endpoints:
+## API Endpoints:
 To check if the API is running, open your browser or an API client and visit:
 `http://localhost:3000`
-
-You should see the response:
-Use POST /upload to convert an image to ASCII art.
 
 ### `POST /upload`
 
@@ -58,6 +47,7 @@ Uploads an image and returns its ASCII representation.
   - `max_width` (optional): The maximum width of the ASCII art (default: 150).
   - `max_height` (optional): The maximum height of the ASCII art (default: 150).
   - `reverse_chars` (optional): A boolean (`true` or `false`) to reverse the order of ASCII characters used for rendering (default: `false`).
+  - `detailed_mode` (optional): A boolean (`true` or `false`) to use a more detailed ASCII character set (default: `false`).
 
 #### **Example Request (Using curl)**
 
